@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home')->middleware(['auth']);
 Route::post('/store-token', [UserController::class, 'storeToken'])->name('store.token');
 Route::post('/send-notification', [HomeController::class, 'sendNotification'])->name('send.notification');
